@@ -1,6 +1,6 @@
 <?php
 
-namespace Std;
+namespace Core;
 
 use PHPUnit\Framework\Assert;
 
