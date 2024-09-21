@@ -1,8 +1,8 @@
 {
-    "name": "core/option",
+    "name": "wulfheart/option",
     "autoload": {
         "psr-4": {
-            "Core\\": "src/"
+            "Wulfheart\\Option\\": "src/"
         }
     },
     "authors": [

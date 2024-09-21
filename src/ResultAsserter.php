@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Wulfheart\Option;
 
 use PHPUnit\Framework\Assert;
 
