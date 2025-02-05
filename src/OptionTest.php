@@ -10,13 +10,13 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(Option::class)]
 final class OptionTest extends TestCase
 {
-    public function test_is_none(): void
+    public function test_isNone(): void
     {
         $this->assertTrue(Option::none()->isNone());
         $this->assertFalse(Option::some(1)->isNone());
     }
 
-    public function test_is_some(): void
+    public function test_isSome(): void
     {
         $this->assertTrue(Option::some(1)->isSome());
         $this->assertFalse(Option::none()->isSome());
@@ -29,7 +29,7 @@ final class OptionTest extends TestCase
         Option::none()->unwrap();
     }
 
-    public function test_unwrap_or(): void
+    public function test_unwrapOr(): void
     {
         $this->assertEquals(1, Option::some(1)->unwrapOr(2));
         $this->assertEquals(2, Option::none()->unwrapOr(2));
@@ -53,13 +53,13 @@ final class OptionTest extends TestCase
         Option::none()->map(fn (int $a): int => $a + 1);
     }
 
-    public function test_map_into_option(): void
+    public function test_mapIntoOption(): void
     {
         $this->assertEquals(Option::some(2), Option::some(1)->mapIntoOption(fn (int $a): int => $a + 1));
         $this->assertEquals(Option::none(), Option::none()->mapIntoOption(fn (int $a): int => $a + 1));
     }
 
-    public function test_map_or(): void
+    public function test_mapOr(): void
     {
         $this->assertEquals(2, Option::some(1)->mapOr(fn (int $a): int => $a + 1, 3));
         $this->assertEquals(3, Option::none()->mapOr(fn (int $a): int => $a + 1, 3));
